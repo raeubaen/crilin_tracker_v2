@@ -12,7 +12,7 @@ hadd -f x_center.root *_x_center*
 ```
 
 ```
-source compare.sh y_center.root y
-source compare.sh x_center.root x
+source compare.sh y_center.root y | grep "sigma: " > sigma_y.txt
+source compare.sh x_center.root x | grep "sigma: " > sigma_x.txt
 ```
 # crilin_tracker_v2
