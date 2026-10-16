@@ -15,4 +15,9 @@ hadd -f x_center.root *_x_center*
 source compare.sh y_center.root y | grep "sigma: " > sigma_y.txt
 source compare.sh x_center.root x | grep "sigma: " > sigma_x.txt
 ```
+
+```
+source scan_reso.sh data/tracker_logcentroid_w300_percent.root 
+```
+
 # crilin_tracker_v2

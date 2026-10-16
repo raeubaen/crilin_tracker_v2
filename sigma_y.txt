@@ -1,7 +1,0 @@
-sigma: 0.536934w: h_delta_y_center_w275
-sigma: 0.441569w: h_delta_y_center_w300
-sigma: 0.550619w: h_delta_y_center_w325
-sigma: 0.689814w: h_delta_y_center_w350
-sigma: 0.674429w: h_delta_y_center_w375
-sigma: 0.691007w: h_delta_y_center_w400
-sigma: 0.713507w: h_delta_y_center_w425
