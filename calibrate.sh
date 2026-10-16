@@ -39,7 +39,7 @@ root $1 << EOF
 
   g_y_u->Fit("pol5")
   auto *f = g_y_u->GetFunction("pol5")
-  TString s(TF1ToString(f, "reco_y_u"));
+  TString s(TF1ToString(f, "reco_y_u"))
   cout << s.Data() << endl;
 
   recoTree->SetAlias("reco_y_u_corr", s.Data());
@@ -61,7 +61,7 @@ root $1 << EOF
 
   g_x_u->Fit("pol5")
   g_x_u->GetFunction("pol5")
-  auto *f = g_y_u->GetFunction("pol5")
+  auto *f = g_x_u->GetFunction("pol5")
   auto s = TF1ToString(f, "reco_x_u")
   recoTree->SetAlias("reco_x_u_corr", s.c_str());
   cout << "alias: " << Form("recoTree->SetAlias(\"reco_x_u_corr\", %s);", s.c_str()) << endl;
@@ -103,7 +103,7 @@ root $1 << EOF
 
   g_x_d->Fit("pol5")
   g_x_d->GetFunction("pol5")
-  auto *f = g_y_d->GetFunction("pol5")
+  auto *f = g_x_d->GetFunction("pol5")
   auto s = TF1ToString(f, "reco_x_d")
   recoTree->SetAlias("reco_x_d_corr", s.c_str());
   cout << "alias: " << Form("recoTree->SetAlias(\"reco_x_d_corr\", %s);", s.c_str()) << endl;
@@ -119,13 +119,10 @@ root $1 << EOF
   h_delta_x->SaveAs("h_delta_x_$2.root")
   h_delta_y->SaveAs("h_delta_y_$2.root")
 
-
   recoTree->Draw("reco_x_d_corr - reco_x_u_corr>>h_delta_x_center_$2(3000, -15, 15)", "true_x == 0 && true_y == 0", "zcol")
   recoTree->Draw("reco_y_d_corr - reco_y_u_corr>>h_delta_y_center_$2(3000, -15, 15)", "true_x == 0 && true_y == 0", "zcol")
   h_delta_x_center_$2->SaveAs("h_delta_x_center_$2.root")
   h_delta_y_center_$2->SaveAs("h_delta_y_center_$2.root")
-
-
 
 
 EOF
